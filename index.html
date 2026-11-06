@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartOP Hospital Queue System</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🏥 SmartOP</h1>
+        <p>Hospital Queue Management System</p>
+        <h2>Better Queue... Better Care...</h2>
+    </header>
+
+    <section class="card">
+        <h2>👩‍⚕️ Patient Registration</h2>
+
+        <input
+            type="text"
+            id="patientName"
+            placeholder="Enter Patient Name"
+        >
+
+        <select id="department">
+            <option value="">Select Department</option>
+            <option value="General Medicine">General Medicine</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Orthopedics">Orthopedics</option>
+        </select>
+
+        <button id="registerBtn">Register Patient</button>
+
+        <p id="message">💚 Your token will be generated automatically!</p>
+    </section>
+
+    <section class="card">
+        <h2>📂 Currently Serving</h2>
+
+        <select id="currentDepartment">
+            <option value="General Medicine">General Medicine</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Orthopedics">Orthopedics</option>
+        </select>
+
+        <button id="nextBtn">Call Next Patient</button>
+
+        <div id="currentPatient">
+            No patients currently serving.
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>👥 Patient Waiting List</h2>
+
+        <select id="waitingDepartment">
+            <option value="General Medicine">General Medicine</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Orthopedics">Orthopedics</option>
+        </select>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Token</th>
+                    <th>Patient Name</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+
+            <tbody id="waitingList"></tbody>
+        </table>
+    </section>
+
+    <footer>
+        <h3>SmartOP - Hospital Queue Management System</h3>
+        <p>💙 Health • Care • Service</p>
+        <p>Developed with ❤️ using Flask</p>
+    </footer>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
